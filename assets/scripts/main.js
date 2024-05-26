@@ -1,7 +1,7 @@
 const pokemonList = document.querySelector('#pokemonList');
 const loadMoreButton = document.querySelector('#loadMore');
 const maxRecords = 151;
-const limit = 6;
+const limit = 8;
 let offset = 0;
 
 function convertTypesToColors(text) {
