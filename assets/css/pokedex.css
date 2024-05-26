@@ -177,7 +177,7 @@ nav img {
     filter: brightness(1.5);
 }
 
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 350px) {
     .pokemons {
         grid-template-columns: 1fr 1fr;
     }
