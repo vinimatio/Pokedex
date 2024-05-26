@@ -106,7 +106,6 @@ nav img {
     color: white;
     border-radius: 1rem;
     font-weight: bold;
-    box-shadow: 2px 2px 8px 0px black;
 }
 
 .pokemon .number {
@@ -160,9 +159,13 @@ nav img {
     border: none;
     border-radius: 1rem;
     color: white;
-    font-size: .825rem;
+    font-size: 1rem;
     padding: .25rem .5rem;
     margin: .25rem 0;
+}
+
+.pagination button:hover {
+    filter: brightness(1.5);
 }
 
 @media screen and (min-width: 380px) {
