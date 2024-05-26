@@ -28,11 +28,11 @@ function convertTypesToColors(text) {
     }
 
     const checkNumberOfwrods = text.split(',');
-    
+
     if (checkNumberOfwrods.length === 1) {
         text = `${text},${text}`
     } else {
-        text = checkNumberOfwrods[0]+' 35%,'+checkNumberOfwrods[1]+' 65%';
+        text = checkNumberOfwrods[0] + ' 35%,' + checkNumberOfwrods[1] + ' 65%';
     }
 
     return text.replace(/normal|grass|fire|water|electric|ice|ground|flying|poison|fighting|psychic|dark|rock|bug|ghost|steel|dragon|fairy/g, match => wordsToChange[match])
@@ -59,6 +59,10 @@ function loadPokemonItens(offset, limit) {
                 </li>
             `).join('');
 
+            if (offset > 0) {
+                window.scrollBy(0,1000);
+            }
+            
     })
 
 }
@@ -66,6 +70,7 @@ function loadPokemonItens(offset, limit) {
 loadPokemonItens(offset, limit);
 
 loadMoreButton.addEventListener('click', () => {
+
     offset += limit;
     const qtdRecordNextPage = offset + limit;
 
@@ -78,4 +83,6 @@ loadMoreButton.addEventListener('click', () => {
     } else {
         loadPokemonItens(offset, limit);
     }
+    debugger
+    window.scrollBy(0, 200);
 })
