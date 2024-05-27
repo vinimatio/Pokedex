@@ -83,6 +83,5 @@ loadMoreButton.addEventListener('click', () => {
     } else {
         loadPokemonItens(offset, limit);
     }
-    debugger
-    window.scrollBy(0, 200);
+    
 })
