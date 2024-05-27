@@ -37,6 +37,13 @@ function convertTypesToColors(text) {
 
     return text.replace(/normal|grass|fire|water|electric|ice|ground|flying|poison|fighting|psychic|dark|rock|bug|ghost|steel|dragon|fairy/g, match => wordsToChange[match])
 }
+const countDown = (() => {
+    let count = maxRecords + 1;
+    return () => {
+      count--;
+      return count;
+    };
+  })();
 
 
 function loadPokemonItens(offset, limit) {
@@ -44,9 +51,9 @@ function loadPokemonItens(offset, limit) {
 
 
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
-
+        
         pokemonList.innerHTML += pokemons.map((pokemon) => `
-        <li class="pokemon ${pokemon.type}"  style="background: linear-gradient(225deg, ${convertTypesToColors(pokemon.types.map((type) => type).join())});">
+        <li class="pokemon ${pokemon.type}"  style="background: linear-gradient(225deg, ${convertTypesToColors(pokemon.types.map((type) => type).join())}); z-index: ${countDown()}">
                     <span class="number">#${pokemon.number}</span>
                     <span class="name">${pokemon.name}</span>
                     <div class="detail">
@@ -59,10 +66,10 @@ function loadPokemonItens(offset, limit) {
                 </li>
             `).join('');
 
-            if (offset > 0) {
-                window.scrollBy(0,1000);
-            }
-            
+        if (offset > 0) {
+            window.scrollBy(0, 1000);
+        }
+
     })
 
 }
@@ -83,5 +90,5 @@ loadMoreButton.addEventListener('click', () => {
     } else {
         loadPokemonItens(offset, limit);
     }
-    
+
 })
