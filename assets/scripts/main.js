@@ -37,6 +37,7 @@ function convertTypesToColors(text) {
 
     return text.replace(/normal|grass|fire|water|electric|ice|ground|flying|poison|fighting|psychic|dark|rock|bug|ghost|steel|dragon|fairy/g, match => wordsToChange[match])
 }
+
 const countDown = (() => {
     let count = maxRecords + 1;
     return () => {
@@ -44,7 +45,6 @@ const countDown = (() => {
       return count;
     };
   })();
-
 
 function loadPokemonItens(offset, limit) {
 
