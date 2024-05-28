@@ -6,14 +6,20 @@
     scroll-behavior: smooth;
 }
 
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
 html {
     --s: 92px;
     /* control the size*/
     --c1: #a1afa5;
     --c2: #b2beb5;
     --c3: #becbc1;
-
-
 }
 
 * {
@@ -31,8 +37,6 @@ html {
         repeating-conic-gradient(from 30deg, #0000 0 120deg, var(--c3) 0 180deg) calc(.5*var(--s)) calc(.5*var(--s)*0.577),
         repeating-conic-gradient(from 30deg, var(--c1) 0 60deg, var(--c2) 0 120deg, var(--c3) 0 180deg);
     background-size: var(--s) calc(var(--s)*0.577);
-
-
 
 }
 

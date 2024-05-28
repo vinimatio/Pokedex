@@ -106,6 +106,7 @@ nav img {
     color: white;
     border-radius: 1rem;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .pokemon .number {
@@ -182,6 +183,7 @@ nav img {
     .pokemons {
         grid-template-columns: 1fr 1fr;
     }
+
     .pokemon {
         margin: .2rem;
     }
@@ -198,3 +200,80 @@ nav img {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
+
+.selectedCard {
+    color: white;
+    position: fixed;
+    z-index: 1900;
+    display: flex;
+    flex-flow: column;
+    top: 50%;
+    left: 50%;
+    width: 80vw;
+    transform: translate(-50%, -50%);
+    padding: 1.5rem .7rem;
+    border-radius: 1rem;
+    line-height: normal;
+    border: .2rem solid whitesmoke;
+    max-width: 500px;
+    min-width: 200px;
+}
+
+.selectedCard .titleSelectedCard {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.numberTitleSelectedCard {
+    color: #00000050;
+    font-size: .850rem;
+}
+
+.selectedCard .typesSelectedCard {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.selectedCard .statsSelectedCard {
+    display: flex;
+    flex-flow: column;
+    gap: .5rem;
+    align-items: center;
+}
+
+.selectedCard .statSelectedCard {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.selectedCard .statSelectedCard .statName {
+    width: 2pxrem;
+    text-align: right;    
+}
+
+.typeSelectedCard {
+    padding: .25rem .5rem;
+    font-size: .825rem;
+    margin: .25rem 0;
+    border-radius: 1rem;
+    text-align: center;
+    filter: brightness(1.1);
+}
+
+.selectedCard .statSelectedCard progress {
+    width: 35vw;
+    max-width: 300px;
+}
+
+#closeButton {
+    display: none;
+}
+
